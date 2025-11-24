@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.h                                             :+:      :+:    :+:   */
+/*   test_strlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 15:22:01 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 15:38:20 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/11/24 15:17:49 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/11/24 15:37:40 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_H
-#define TEST_H
+#include "test.h"
 
-
-#include "0_LIBFT/libft.h"
-
-void chien();
-char testatoi();
-
-#endif
+void chien()
+{
+	ft_printf("wouf");
+}
