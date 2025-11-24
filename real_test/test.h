@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:22:01 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 20:54:15 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/24 21:39:28 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ int test_putstr1();
 int test_putstr2();
 int test_putstr3();
 int test_putstr4();
+
+int test_strjoin1();
+int test_strjoin2();
+int test_strjoin3();
+int test_strjoin4();
 
 
 #endif

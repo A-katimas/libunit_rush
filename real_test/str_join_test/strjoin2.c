@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 21:23:36 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 21:36:45 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/24 21:39:52 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int test_strjoin2()
 	char	*chat;
 	char	*chienchatla;
 	char	*rep;
+	
 	rep = "wouf";
 	value = 0;
 	chien = "wouf";
