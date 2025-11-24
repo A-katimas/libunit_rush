@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:22:01 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 15:38:20 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:47:59 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define TEST_H
 
 
-#include "0_LIBFT/libft.h"
+#include "../0_LIBFT/libft.h"
 
 void chien();
 char testatoi();

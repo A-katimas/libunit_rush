@@ -7,30 +7,34 @@ CFLAGS = -Werror -Wextra -Wall -g3
 SOURCES =	test_strlen.c \
 			test_atoi.c
 
-MAKEBASE = libunit_rush/Makefile
+MAKEBASE = libunit_rush
+LIBFT = libunit_rush/0_LIBFT
 
-OBJ = $(SOURCES: .c=.o)
+OBJ = $(SOURCES:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar -rcs $@ $(OBJ)
-#$(NAME): $(MAKEBASE) $(OBJ)
-#	cp -rf $(MAKEBASE) $(NAME)
-#	ar -rcs $@ $(OBJ)
-#$(MAKEBASE):
-#	make -C ..
+$(NAME): $(LIBFT) $(OBJ)
+	cp -rf $(LIBFT) $(NAME)
+	ar -rcs $@ $(OBJ)
+$(LIBFT):
+	make -C ..
 
-la: 
+la:
+
 clean:
 	rm -rf $(OBJ)
-	make -C .. clean
+#	make -C .. clean
+	make -c $(LIBFT) clean
 
 fclean: clean
 	rm -rf $(NAME)
-	make -C .. fclean
+#	make -C .. fclean
+	make -c $(LIBFT) fclean
 
 re: fclean all
 
-.PHONY : all clean fclean re
+.PHONY : all la clean fclean re
 
