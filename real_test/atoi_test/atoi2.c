@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_atoi.c                                        :+:      :+:    :+:   */
+/*   atoi2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 15:35:26 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 16:00:12 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/11/24 18:12:35 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/11/24 19:03:11 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "../test.h"
 
-char testatoi()
+int test_atoi2()
 {
-	ft_printf("wuf");
-	return('q');
+	int value;
+
+	value = 0;
+	char *chien;
+	chien = "wouf";
+	value = ft_strlen(chien);
+
+	if(value == 4)
+		return (0);
+	else
+		return (-1);
 }

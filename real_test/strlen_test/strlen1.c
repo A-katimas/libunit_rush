@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.h                                             :+:      :+:    :+:   */
+/*   strlen1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 15:22:01 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 18:52:25 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/11/24 18:12:35 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/11/24 19:03:17 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEST_H
-#define TEST_H
+#include "../test.h"
 
+int teststrlen1()
+{
+	int value;
 
-#include "../resource/libft.h"
+	value = 0;
+	char *chien;
+	chien = "wouf";
+	value = ft_strlen(chien);
 
-int teststrlen1();
-int teststrlen2();
-int teststrlen3();
-int teststrlen4();
-
-int test_atoi1();
-int test_atoi2();
-int test_atoi3();
-int test_atoi4();
-
-#endif
+	if(value == 4)
+		return (0);
+	else
+		return (-1);
+}

@@ -1,40 +1,37 @@
 NAME = test.a
-
 CC = cc
+CFLAGS = -Wall -Werror -Wextra
 
-CFLAGS = -Werror -Wextra -Wall -g3
+LIBFT = ../resource/libft.a
 
-SOURCES =	test_strlen.c \
-			test_atoi.c
+SOURCE = 	strlen_test/strlen1.c \
+			strlen_test/strlen2.c \
+			strlen_test/strlen3.c \
+			strlen_test/strlen4.c \
+			atoi_test/atoi1.c \
+			atoi_test/atoi2.c \
+			atoi_test/atoi3.c \
+			atoi_test/atoi4.c
 
-MAKEBASE = libunit_rush
-LIBFT = libunit_rush/0_LIBFT
-
-OBJ = $(SOURCES:.c=.o)
+OBJ = $(SOURCE:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar -rcs $@ $(OBJ)
 $(NAME): $(LIBFT) $(OBJ)
 	cp -rf $(LIBFT) $(NAME)
 	ar -rcs $@ $(OBJ)
-$(LIBFT):
-	make -C ..
 
-la:
+$(LIBFT):
+	make -C libft
 
 clean:
 	rm -rf $(OBJ)
-#	make -C .. clean
-	make -c $(LIBFT) clean
+	make -C libft clean
 
 fclean: clean
 	rm -rf $(NAME)
-#	make -C .. fclean
-	make -c $(LIBFT) fclean
+	make -C libft fclean
 
 re: fclean all
 
-.PHONY : all la clean fclean re
-
+.PHONY : all clean fclean re
