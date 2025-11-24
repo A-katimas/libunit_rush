@@ -6,7 +6,7 @@
 #    By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 16:03:36 by vsyutkin          #+#    #+#              #
-#    Updated: 2025/11/24 16:12:47 by vsyutkin         ###   ########.fr        #
+#    Updated: 2025/11/24 18:15:50 by vsyutkin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,23 @@
 #						# PROJECT DIRECTORY DECLARATIONS #					   #
 # ############################################################################ #
 
-LIBFT_DIR = ./0_LIBFT/
+LIBFT_DIR = ./resource/
+LIBUNIT_DIR = ./1_LIBUNIT/
 
 # ############################################################################ #
 #						# PROJECT SOURCES DECLARATIONS #					   #
 # ############################################################################ #
 
+LIBUNIT_SRC =	cleanup_test_list.c \
+				display_test_result.c \
+				launch_test.c \
+				load_test.c 
+
 # ############################################################################ #
 #						# PROJECT PATH DECLARATIONS #						   #
 # ############################################################################ #
+
+FILES =	$(addprefix $(LIBUNIT_DIR), $(LIBUNIT_SRC))
 
 # ############################################################################ #
 #						# PROJECT FILES DECLARATIONS #						   #
@@ -35,7 +43,7 @@ LIBFT_DIR = ./0_LIBFT/
 NAME = libunit.a
 PROGRAM = ./$(NAME)
 
-AR = ./0_LIBFT/libft.a
+AR = $(LIBFT_DIR)libft.a
 
 # ############################################################################ #
 #						# PROJECT MACROS #									   #
@@ -57,7 +65,8 @@ ARMAKE = make -C $(LIBFT_DIR)
 all: $(NAME)
 
 $(NAME): $(AR)
-	$(CC) $(CFLAGS) $(FILES) $(AR) -o $(NAME)
+# 	$(CC) $(CFLAGS) $(FILES) $(AR) -o $(NAME)
+	ar rcs $(NAME) $(FILES)
 
 $(AR):
 	make -C $(LIBFT_DIR)
