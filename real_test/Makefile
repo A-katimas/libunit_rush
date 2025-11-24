@@ -11,7 +11,19 @@ SOURCE = 	strlen_test/strlen1.c \
 			atoi_test/atoi1.c \
 			atoi_test/atoi2.c \
 			atoi_test/atoi3.c \
-			atoi_test/atoi4.c
+			atoi_test/atoi4.c \
+			atoi_test/atoi5.c \
+			putstr_test/putstr1.c \
+			putstr_test/putstr2.c \
+			putstr_test/putstr3.c \
+			putstr_test/putstr4.c \
+			str_join_test/strjoin1.c \
+			str_join_test/strjoin2.c \
+			str_join_test/strjoin3.c \
+			str_join_test/strjoin4.c
+
+
+
 
 OBJ = $(SOURCE:.c=.o)
 

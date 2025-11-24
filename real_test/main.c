@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:18:26 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 20:25:59 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/24 20:50:11 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int ac,char **av)
 {
 	int a= 0;
 	ft_printf("argu %d str %s \n",ac,av[1]);
-	a = teststrlen1();
+	a = test_atoi5();
 	if (!a)
 		ft_printf("yes");
 	else
