@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vsyutkin <vsyutkin@student.42.fr>          +#+  +:+       +#+         #
+#    By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 16:03:36 by vsyutkin          #+#    #+#              #
-#    Updated: 2024/05/23 22:15:40 by vsyutkin         ###   ########.fr        #
+#    Updated: 2025/11/24 14:28:41 by vsyutkin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@
 #						# PROJECT END_FILES DECLARATIONS #					   #
 # ############################################################################ #
 
-NAME = no_name_yet.you_suck
+NAME = libunit.a
 PROGRAM = ./$(NAME)
 
 AR = ./0_LIBFT/libft.a

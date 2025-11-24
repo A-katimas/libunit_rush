@@ -1,1 +1,1 @@
-chore: terminal_colors moved to LIBFT repository
+feature: name of the program in Makefile
