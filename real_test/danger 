@@ -1,0 +1,50 @@
+makefile
+
+SOURCE = 	strlen_test/strlen1.c \
+			strlen_test/strlen2.c \
+			strlen_test/strlen3.c \
+			strlen_test/strlen4.c \
+			atoi_test/atoi1.c \
+			atoi_test/atoi2.c \
+			atoi_test/atoi3.c \
+			atoi_test/atoi4.c \
+			atoi_test/atoi5.c \
+			putstr_test/putstr1.c \
+			putstr_test/putstr2.c \
+			putstr_test/putstr3.c \
+			putstr_test/putstr4.c \
+			str_join_test/strjoin1.c \
+			str_join_test/strjoin2.c \
+			str_join_test/strjoin3.c \
+			str_join_test/strjoin4.c \
+			
+
+#ifndef TEST_H
+#define TEST_H
+
+
+#include "../resource/libft.h"
+
+int	teststrlen1();
+int	teststrlen2();
+int	teststrlen3();
+int	teststrlen4();
+
+int	test_atoi1();
+int	test_atoi2();
+int	test_atoi3();
+int	test_atoi4();
+int	test_atoi5();
+
+int test_putstr1();
+int test_putstr2();
+int test_putstr3();
+int test_putstr4();
+
+int test_strjoin1();
+int test_strjoin2();
+int test_strjoin3();
+int test_strjoin4();
+
+
+#endif
