@@ -6,11 +6,26 @@
 /*   By: vsyutkin <vsyutkin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 17:05:44 by vsyutkin          #+#    #+#             */
-/*   Updated: 2024/10/24 12:38:45 by aalferov         ###   ########.fr       */
+/*   Updated: 2025/01/23 18:42:21 by aalferov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./mhandler.h"
+
+static void	ft_free_2d(void **array)
+{
+	int		index;
+
+	if (!array)
+		return ;
+	index = 0;
+	while (array && array[index])
+	{
+		free(array[index]);
+		index++;
+	}
+	free(array);
+}
 
 /*
   Free the allocated memory.
@@ -18,9 +33,13 @@
 static void	mhandler_free_1d_or_2d(t_allocs *allocs)
 {
 	if (allocs->is_2d)
-		free(allocs->content_2d);
+	{
+		if (allocs->content_2d)
+			ft_free_2d(allocs->content_2d);
+	}
 	else
-		free(allocs->content);
+		if (allocs->content)
+			free(allocs->content);
 }
 
 /*
@@ -33,10 +52,7 @@ void	mhandler_free_all(t_allocs **allocs)
 	while (*allocs)
 	{
 		temp = (*allocs)->next;
-		if ((*allocs)->is_2d)
-			free((*allocs)->content_2d);
-		else
-			free((*allocs)->content);
+		mhandler_free_1d_or_2d(*allocs);
 		(*allocs)->content = NULL;
 		free(*allocs);
 		*allocs = temp;
