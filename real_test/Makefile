@@ -1,8 +1,20 @@
+STRLEN_DIR = 	strlen_test/
+STRLEN_SRC = 	00_launcher.c \
+				strlen1.c \
+				strlen2.c \
+				strlen3.c \
+				strlen4.c
+
+STRLEN_FILES = 	$(addprefix $(STRLEN_DIR), $(STRLEN_SRC))
+
 NAME = test.a
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g3
 
 LIBFT = ../resource/libft.a
+
+LIBFT_DIR = ../resource/
+
 
 SOURCE = 	strlen_test/strlen1.c \
 			strlen_test/strlen2.c \
@@ -35,16 +47,19 @@ $(NAME): $(LIBFT) $(OBJ)
 	ar -rcs $@ $(OBJ)
 
 $(LIBFT):
-	make -C libft
+	make -C $(LIBFT_DIR)
 
 clean:
 	rm -rf $(OBJ)
-	make -C libft clean
+	make -C $(LIBFT_DIR) clean
 
 fclean: clean
 	rm -rf $(NAME)
-	make -C libft fclean
+	make -C $(LIBFT_DIR) fclean
 
 re: fclean all
+
+strlen: $(STRLEN_FILES) main.c $(LIBFT) ../libunit.a
+	$(CC) $(CFLAGS) -o strlen_test/a.out $(STRLEN_FILES) main.c ../libunit.a $(LIBFT)
 
 .PHONY : all clean fclean re
