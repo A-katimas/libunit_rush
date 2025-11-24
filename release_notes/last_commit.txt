@@ -1,1 +1,1 @@
-Added Makefile + terminal_colors.h
+chore: terminal_colors moved to LIBFT repository
