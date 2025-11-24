@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsyutkin <vsyutkin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:36:46 by vsyutkin          #+#    #+#             */
-/*   Updated: 2023/11/08 15:36:52 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:50:12 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/* Is given a conversion C and the argument in va_list. 
+/* Is given a conversion C and the argument in va_list.
 */
 static int	ft_putarg(char c, va_list args)
 {
@@ -33,7 +33,7 @@ static int	ft_putarg(char c, va_list args)
 	return (ft_putchar_fd('%', 1));
 }
 
-/* Printf (3) worst replica in the world. 
+/* Printf (3) worst replica in the world.
 Converts only cspdiuxX%, without any flag.
 Will parse given string to detect an '%' and get the conversion instruction,
 summoning function above to print in to the terminal (fd = 1).
