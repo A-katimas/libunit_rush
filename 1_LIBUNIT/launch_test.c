@@ -6,11 +6,13 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:22:59 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/24 17:43:35 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/24 21:03:35 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
+#include <sys/wait.h>
+#include <sys/types.h>
 
 /*
 	Executes a test in the forked process and captures its exit status

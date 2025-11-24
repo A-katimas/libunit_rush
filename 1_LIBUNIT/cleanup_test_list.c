@@ -6,7 +6,7 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 18:00:35 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/24 18:02:53 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/24 21:02:23 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@
 */
 void	cleanup_test_list(t_unit_test **test_list)
 {
-	mhandler_free_all((*test_list)->allocs);
+	mhandler_free_all(&(*test_list)->allocs);
 }

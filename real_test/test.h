@@ -6,7 +6,7 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:22:01 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 21:20:56 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/24 21:57:41 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,18 @@ int	teststrlen1(void);
 int	teststrlen2(void);
 int	teststrlen3(void);
 int	teststrlen4(void);
+
+int	test_atoi5();
+
+int test_putstr1();
+int test_putstr2();
+int test_putstr3();
+int test_putstr4();
+
+int test_strjoin1();
+int test_strjoin2();
+int test_strjoin3();
+int test_strjoin4();
 
 int	test_atoi1(void);
 int	test_atoi2(void);

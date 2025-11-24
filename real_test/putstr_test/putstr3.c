@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   putstr3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 15:18:26 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 21:56:25 by vsyutkin         ###   ########.fr       */
+/*   Created: 2025/11/24 20:54:37 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/11/24 21:34:16 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "../test.h"
 
-int	main(void)
+int test_putstr3()
 {
-	// int	a;
+	int value;
 
-	// a = 0;
-	// ft_printf("argu %d str %s \n", ac, av[1]);
-	// a = test_atoi5();
-	// if (!a)
-	// 	ft_printf("yes");
-	// else
-	// 	ft_printf("nan0");
+	value = 0;
+	char *chien;
+	chien = "woufla\n";
+	value = ft_putstr_fd(chien,1);
 
-	strlen_launcher();
+	if(value == 4)
+		return (0);
+	else
+		return (-1);
 }

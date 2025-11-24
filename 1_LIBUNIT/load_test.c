@@ -6,7 +6,7 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:01:49 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/24 17:22:31 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/24 21:46:33 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,15 @@ t_unit_test	*init_test_list(void)
 	Adds a new test to the end of the test list.
 	Keeps track of allocated memory using mhandler.
 */
-void	load_test(t_unit_test **test_list, char *name, void (*test_func)(void))
+void	load_test(t_unit_test **test_list, char *name, int (*test_func)(void))
 {
 	t_unit_test	*temp;
 
-	if (!test_list)
-		test_list = init_test_list();
+	if (!(*test_list))
+		(*test_list) = init_test_list();
 	temp = *test_list;
+	if (!temp)
+		exit(EXIT_FAILURE);
 	while (temp->next)
 		temp = temp->next;
 	temp->next = (t_unit_test *)malloc(sizeof(t_unit_test));
@@ -51,5 +53,5 @@ void	load_test(t_unit_test **test_list, char *name, void (*test_func)(void))
 	temp->next->test_func = test_func;
 	temp->next->next = NULL;
 	temp->next->signal = 0;
-	temp->next->allocs = &(*test_list)->allocs;
+	temp->next->allocs = (*test_list)->allocs;
 }

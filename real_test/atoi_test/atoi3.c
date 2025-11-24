@@ -6,22 +6,22 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 18:12:35 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 19:03:14 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/24 20:47:57 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../test.h"
 
-int test_atoi3()
+int	test_atoi3()
 {
-	int value;
+	int		value;
+	char	*chien;
 
 	value = 0;
-	char *chien;
-	chien = "wouf";
-	value = ft_strlen(chien);
+	chien = "";
+	value = ft_atoi(chien);
 
-	if(value == 4)
+	if(value == 0)
 		return (0);
 	else
 		return (-1);

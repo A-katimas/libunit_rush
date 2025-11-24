@@ -6,7 +6,7 @@
 #    By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 16:03:36 by vsyutkin          #+#    #+#              #
-#    Updated: 2025/11/24 18:15:50 by vsyutkin         ###   ########.fr        #
+#    Updated: 2025/11/24 21:49:03 by vsyutkin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,8 @@ PROGRAM = ./$(NAME)
 
 AR = $(LIBFT_DIR)libft.a
 
+OBJS = $(FILES:.c=.o)
+
 # ############################################################################ #
 #						# PROJECT MACROS #									   #
 # ############################################################################ #
@@ -61,18 +63,23 @@ ARMAKE = make -C $(LIBFT_DIR)
 #						# PROJECT RULES DECLARATIONS #						   #
 # ############################################################################ #
 
+.c.o: 
+	cc $(CFLAGS) -c $< -o ${<:.c=.o}
+
 # all: $(NAME)
 all: $(NAME)
 
-$(NAME): $(AR)
+$(NAME): $(OBJS) $(AR)
 # 	$(CC) $(CFLAGS) $(FILES) $(AR) -o $(NAME)
-	ar rcs $(NAME) $(FILES)
+	ar rcs $(NAME) $(OBJS)
+
 
 $(AR):
 	make -C $(LIBFT_DIR)
 
 clean: clear
 	$(ARMAKE) clean
+	rm -rf $(OBJS)
 
 fclean: clear clean
 	$(RM) $(NAME)

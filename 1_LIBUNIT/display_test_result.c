@@ -6,12 +6,12 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:44:03 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/24 17:59:04 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/24 21:02:48 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
-#include "terminal_colors.h"
+#include "../resource/terminal_colors.h"
 #include <signal.h>
 
 static

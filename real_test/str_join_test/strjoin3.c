@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi2.c                                            :+:      :+:    :+:   */
+/*   strjoin3.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 18:12:35 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 20:44:28 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/11/24 21:23:40 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/11/24 21:39:51 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../test.h"
 
-int	test_atoi2()
+int test_strjoin3()
 {
 	int		value;
 	char	*chien;
+	char	*chat;
+	char	*chienchatla;
+	char	*rep;
 
+	rep = "wouf";
 	value = 0;
-	chien = "-2147483648";
-	value = ft_atoi(chien);
-
-	if(value == INT_MIN)
+	chien = "wouf";
+	chat = "";
+	chienchatla = ft_strjoin(chien,chat);
+	if(chienchatla == rep)
 		return (0);
 	else
 		return (-1);
 }
-

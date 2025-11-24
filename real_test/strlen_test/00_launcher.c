@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen1.c                                          :+:      :+:    :+:   */
+/*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 18:12:35 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 20:39:20 by vsyutkin         ###   ########.fr       */
+/*   Created: 2025/11/24 20:41:13 by vsyutkin          #+#    #+#             */
+/*   Updated: 2025/11/24 21:26:47 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../test.h"
 
-int	teststrlen1()
+void	strlen_launcher(void)
 {
-	int		value;
-	char	*chien;
+	t_unit_test	*test_list;
 
-	value = 0;
-	chien = "wouf";
-	value = ft_strlen(chien);
+	test_list = NULL;
+	load_test(&test_list, "ft_strlen test 1", &teststrlen1);
+	load_test(&test_list, "ft_strlen test 2", &teststrlen2);
+	load_test(&test_list, "ft_strlen test 3", &teststrlen3);
+	load_test(&test_list, "ft_strlen test 4", &teststrlen4);
 
-	if (value == 4)
-		return (0);
-	else
-		return (-1);
+	launch_tests(&test_list);
+	display_test_result(&test_list);
+	cleanup_test_list(&test_list);
 }
