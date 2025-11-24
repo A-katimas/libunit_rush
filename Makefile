@@ -3,16 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+         #
+#    By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 16:03:36 by vsyutkin          #+#    #+#              #
-#    Updated: 2025/11/24 15:31:54 by jtardieu         ###   ########.fr        #
+#    Updated: 2025/11/24 16:12:47 by vsyutkin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # ############################################################################ #
 #						# PROJECT DIRECTORY DECLARATIONS #					   #
 # ############################################################################ #
+
+LIBFT_DIR = ./0_LIBFT/
 
 # ############################################################################ #
 #						# PROJECT SOURCES DECLARATIONS #					   #
@@ -52,7 +54,7 @@ ARMAKE = make -C $(LIBFT_DIR)
 # ############################################################################ #
 
 # all: $(NAME)
-all: help
+all: $(NAME)
 
 $(NAME): $(AR)
 	$(CC) $(CFLAGS) $(FILES) $(AR) -o $(NAME)
@@ -61,12 +63,12 @@ $(AR):
 	make -C $(LIBFT_DIR)
 
 clean: clear
-	# $(ARMAKE) clean
+	$(ARMAKE) clean
 
 fclean: clear clean
-	# $(RM) $(NAME)
-	# $(RM) a.out
-	# $(ARMAKE) fclean
+	$(RM) $(NAME)
+	$(RM) a.out
+	$(ARMAKE) fclean
 
 re: clear fclean all
 
