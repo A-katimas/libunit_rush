@@ -30,6 +30,17 @@ STRLEN_FILES = 	$(addprefix $(STRLEN_DIR), $(STRLEN_SRC))
 STRLEN_NAME = $(STRLEN_DIR)strlen_test.exe
 
 
+ISALPHA_DIR = 	isalpha_test/
+ISALPHA_SRC = 	00_launcher.c \
+				0_charmin.c \
+				0_charmaj.c \
+				0_space.c \
+				0_nbr.c \
+				0_charspe.c
+
+ISALPHA_FILES = 	$(addprefix $(ISALPHA_DIR), $(ISALPHA_SRC))
+ISALPHA_NAME = $(ISALPHA_DIR)ISALPHA_test.exe
+
 MAIN = main.c
 NAME = test.a
 CC = cc

@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:22:01 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/25 15:01:41 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/25 15:25:08 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,11 @@ int test_strjoin2(void);
 int test_strjoin3(void);
 int test_strjoin4(void);
 
-int test_
+int test_isalpha1(void);
+int test_isalpha2(void);
+int test_isalpha3(void);
+int test_isalpha4(void);
+int test_isalpha5(void);
 
 
 void	strlen_launcher(void);
