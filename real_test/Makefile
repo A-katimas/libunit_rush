@@ -1,30 +1,48 @@
+
+ATOI_DIR =	atoi_test/
+ATOI_SRC =	00_launcher.c \
+			0_intmax.c \
+			0_intmin.c \
+			0_empty.c \
+			0_normal.c \
+			0_space.c
+
+ATOI_FILES =	$(addprefix $(ATOI_DIR), $(ATOI_SRC))
+ATOI_NAME =	$(ATOI_DIR)atoi_test.exe
+
+STRJOIN_DIR = 	str_join_test/
+STRJOIN_SRC = 	00_launcher.c \
+				0_normal.c \
+				0_NULL.c \
+				0_strempty.c \
+				0_emptystr.c
+STRJOIN_FILES = 	$(addprefix $(STRJOIN_DIR), $(STRJOIN_SRC))
+STRJOIN_NAME = $(STRJOIN_DIR)str_join_test.exe
+
 STRLEN_DIR = 	strlen_test/
 STRLEN_SRC = 	00_launcher.c \
-				strlen1.c \
-				strlen2.c \
-				strlen3.c \
-				strlen4.c
+				0_str.c \
+				0_empty.c \
+				0_NULL.c \
+				0_charspe.c
 
 STRLEN_FILES = 	$(addprefix $(STRLEN_DIR), $(STRLEN_SRC))
+STRLEN_NAME = $(STRLEN_DIR)strlen_test.exe
 
+
+MAIN = main.c
 NAME = test.a
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g3
 
 LIBFT = ../resource/libft.a
-
 LIBFT_DIR = ../resource/
 
+LIBUNIT = ../libunit.a
+LIBUNIT_DIR = ../
 
-SOURCE = 	strlen_test/00_str.c \
-			strlen_test/01_empty.c \
-			strlen_test/02_NULL.c \
-			strlen_test/03_charspe.c \
-			atoi_test/00_intmax.c \
-			atoi_test/01_intmin.c \
-			atoi_test/02_empty.c \
-			atoi_test/03_normal.c \
-			atoi_test/04_space.c \
+SOURCE = 	$(STRLEN_FILES) \
+			$(ATOI_FILES) \
 			putstr_test/00_str.c \
 			putstr_test/01_charspe.c \
 			putstr_test/02_strspe.c \
@@ -50,17 +68,31 @@ $(NAME): $(LIBFT) $(OBJ)
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 
+$(LIBUNIT):
+	make -C $(LIBUNIT_DIR)
+
 clean:
 	rm -rf $(OBJ)
 	make -C $(LIBFT_DIR) clean
+	make -C $(LIBUNIT_DIR) clean
 
 fclean: clean
 	rm -rf $(NAME)
 	make -C $(LIBFT_DIR) fclean
+	make -C $(LIBUNIT_DIR) fclean
 
 re: fclean all
 
-strlen: $(STRLEN_FILES) main.c $(LIBFT) ../libunit.a
-	$(CC) $(CFLAGS) -o strlen_test/a.out $(STRLEN_FILES) main.c ../libunit.a $(LIBFT)
+atoi: $(ATOI_FILES) $(LIBFT) $(LIBUNIT)
+	$(CC) $(CFLAGS) -o $(ATOI_NAME) $(ATOI_FILES) $(MAIN) $(LIBUNIT) $(LIBFT)
+	${ATOI_NAME}
 
-.PHONY : all clean fclean re
+str_join: $(STRJOIN_FILES) $(LIBFT) $(LIBUNIT)
+	$(CC) $(CFLAGS) -o $(STRJOIN_NAME) $(STRJOIN_FILES) $(MAIN) $(LIBUNIT) $(LIBFT)
+	${STRJOIN_NAME}
+
+strlen: $(STRLEN_FILES) $(LIBFT) $(LIBUNIT)
+	$(CC) $(CFLAGS) -o $(STRLEN_NAME) $(STRLEN_FILES) $(MAIN) $(LIBUNIT) $(LIBFT)
+	${STRLEN_NAME}
+
+.PHONY : all clean fclean re strlen
