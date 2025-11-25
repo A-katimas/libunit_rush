@@ -6,13 +6,11 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:22:59 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/24 21:03:35 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/25 14:27:29 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
-#include <sys/wait.h>
-#include <sys/types.h>
 
 /*
 	Executes a test in the forked process and captures its exit status
@@ -25,7 +23,7 @@ void	launch_tests(t_unit_test **test_list)
 	pid_t		pid;
 
 	temp = *test_list;
-	while (temp->next)
+	while (temp)
 	{
 		temp->signal = 0;
 		if (temp->test_func)

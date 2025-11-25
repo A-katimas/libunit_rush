@@ -6,13 +6,12 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:44:03 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/24 21:02:48 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/25 14:22:35 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 #include "../resource/terminal_colors.h"
-#include <signal.h>
 
 static
 void	ft_putstr_fd_colored(char *s, int fd, char *color)
@@ -20,28 +19,43 @@ void	ft_putstr_fd_colored(char *s, int fd, char *color)
 	ft_putstr_fd(color, fd);
 	ft_putstr_fd(s, fd);
 	ft_putstr_fd(TERMINAL_RESET, fd);
-	ft_putendl_fd("", fd);
 }
 
 static
-void	signal_report(int signal)
+void	signal_print(int signal)
 {
-	if (signal == SIGSEGV)
-		ft_putstr_fd_colored("SIGSEGV", 1, TERMINAL_RED);
-	else if (signal == SIGBUS)
-		ft_putstr_fd_colored("SIGBUS", 1, TERMINAL_YELLOW);
-	else if (signal == SIGABRT)
-		ft_putstr_fd_colored("SIGABRT", 1, TERMINAL_MAGENTA);
-	else if (signal == SIGFPE)
-		ft_putstr_fd_colored("SIGFPE", 1, TERMINAL_CYAN);
-	else if (signal == SIGILL)
-		ft_putstr_fd_colored("SIGILL", 1, TERMINAL_BLUE);
-	else if (signal == SIGPIPE)
-		ft_putstr_fd_colored("SIGPIPE", 1, TERMINAL_GREEN);
+	if (signal == TEST_SIGSEGV)
+		ft_putstr_fd_colored("SIGSEGV", 1, TERMINAL_UNDER_RED);
+	else if (signal == TEST_SIGBUS)
+		ft_putstr_fd_colored("SIGBUS", 1, TERMINAL_UNDER_YELLOW);
+	else if (signal == TEST_SIGABRT)
+		ft_putstr_fd_colored("SIGABRT", 1, TERMINAL_UNDER_MAGENTA);
+	else if (signal == TEST_SIGFPE)
+		ft_putstr_fd_colored("SIGFPE", 1, TERMINAL_UNDER_CYAN);
+	else if (signal == TEST_SIGILL)
+		ft_putstr_fd_colored("SIGILL", 1, TERMINAL_UNDER_BLUE);
+	else if (signal == TEST_SIGPIPE)
+		ft_putstr_fd_colored("SIGPIPE", 1, TERMINAL_UNDER_GREEN);
 	else if (signal == 0)
+		ft_putstr_fd_colored("SUCCESS", 1, TERMINAL_UNDER_GREEN);
+	else if (signal == -1)
+		ft_putstr_fd_colored("FAILURE", 1, TERMINAL_UNDER_RED);
+	else
+		ft_putstr_fd_colored("Unknown signal", 1, TERMINAL_UNDER_WHITE);
+}
+
+static
+void	signal_report(int signal, int expected)
+{
+	if (signal == expected)
 		ft_putstr_fd_colored("OK", 1, TERMINAL_BOLD_GREEN);
 	else
-		ft_putstr_fd_colored("Unknown signal", 1, TERMINAL_WHITE);
+		ft_putstr_fd_colored("KO", 1, TERMINAL_BOLD_RED);
+	ft_printf(" (expected: ");
+	signal_print(expected);
+	ft_printf(", got: ");
+	signal_print(signal);
+	ft_printf(")\n");
 }
 
 /*
@@ -59,10 +73,10 @@ void	display_test_result(t_unit_test **test_list)
 	while (temp->next)
 	{
 		total_tests++;
-		if (temp->next->signal == 0)
+		if (temp->signal == 0)
 			passed_tests++;
-		ft_printf("%s: ", temp->next->name);
-		signal_report(temp->next->signal);
+		ft_printf("%s: ", temp->name);
+		signal_report(temp->signal, temp->expected);
 		temp = temp->next;
 	}
 	ft_printf("Passed %d out of %d tests.\n", passed_tests, total_tests);
