@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 14:39:51 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/25 14:40:03 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/25 14:44:33 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int test_putstr2()
 	value = 0;
 	char *chien;
 	chien = "wouf\t";
-	value = ft_putstr_fd(chien,1);
+	value = ft_isalpha(chien);
 
 	if(value == 4)
 		return (0);
