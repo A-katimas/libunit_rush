@@ -16,23 +16,24 @@ LIBFT = ../resource/libft.a
 LIBFT_DIR = ../resource/
 
 
-SOURCE = 	strlen_test/strlen1.c \
-			strlen_test/strlen2.c \
-			strlen_test/strlen3.c \
-			strlen_test/strlen4.c \
-			atoi_test/atoi1.c \
-			atoi_test/atoi2.c \
-			atoi_test/atoi3.c \
-			atoi_test/atoi4.c \
-			atoi_test/atoi5.c \
-			putstr_test/putstr1.c \
-			putstr_test/putstr2.c \
-			putstr_test/putstr3.c \
-			putstr_test/putstr4.c \
-			str_join_test/strjoin1.c \
-			str_join_test/strjoin2.c \
-			str_join_test/strjoin3.c \
-			str_join_test/strjoin4.c \
+SOURCE = 	strlen_test/00str.c \
+			strlen_test/01empty.c \
+			strlen_test/02NULL.c \
+			strlen_test/03charspe.c \
+			atoi_test/00intmax.c \
+			atoi_test/01intmin.c \
+			atoi_test/02empty.c \
+			atoi_test/03normal.c \
+			atoi_test/04space.c \
+			putstr_test/00str.c \
+			putstr_test/01charspe.c \
+			putstr_test/02strspe.c \
+			putstr_test/03empty.c \
+			str_join_test/00normal.c \
+			str_join_test/01NULL.c \
+			str_join_test/02strempty.c \
+			str_join_test/03emptystr.c \
+			isalpha_test/00char.c
 
 
 
