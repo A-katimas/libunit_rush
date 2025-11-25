@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 20:41:13 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/25 14:48:57 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/25 17:50:55 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	strlen_launcher(void)
 	load_test(&test_list, "STRLEN: test 2", &teststrlen2, TEST_SUCCESS);
 	load_test(&test_list, "STRLEN: test 3", &teststrlen3, TEST_SUCCESS);
 	load_test(&test_list, "STRLEN: test 4", &teststrlen4, TEST_SUCCESS);
-
 	launch_tests(&test_list);
 	display_test_result(&test_list);
 	cleanup_test_list(&test_list);

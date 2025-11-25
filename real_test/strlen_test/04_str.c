@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01NULL.c                                           :+:      :+:    :+:   */
+/*   00_str.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 21:23:36 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/25 14:43:09 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/11/24 18:12:35 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/11/25 17:49:26 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../test.h"
 
-int test_strjoin2()
+int	teststrlen1(void)
 {
 	int		value;
 	char	*chien;
-	char	*chat;
-	char	*chienchatla;
-	char	*rep;
 
-	rep = "wouf";
 	value = 0;
 	chien = "wouf";
-	chienchatla = ft_strjoin(chien,chat);
-	if(chienchatla == rep)
+	value = ft_strlen(chien);
+	if (value == 4)
 		return (0);
 	else
 		return (-1);

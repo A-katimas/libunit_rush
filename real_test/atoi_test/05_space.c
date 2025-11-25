@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putstr3.c                                          :+:      :+:    :+:   */
+/*   04_space.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 20:54:37 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/24 21:34:16 by jtardieu         ###   ########.fr       */
+/*   Created: 2025/11/24 20:45:36 by jtardieu          #+#    #+#             */
+/*   Updated: 2025/11/25 17:48:49 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../test.h"
 
-int test_putstr3()
+int	test_atoi5(void)
 {
-	int value;
+	int		value;
+	char	*chien;
 
 	value = 0;
-	char *chien;
-	chien = "woufla\n";
-	value = ft_putstr_fd(chien,1);
-
-	if(value == 4)
+	chien = "       +69";
+	value = ft_atoi(chien);
+	if (value == 69)
 		return (0);
 	else
 		return (-1);

@@ -1,30 +1,31 @@
 
 ATOI_DIR =	atoi_test/
 ATOI_SRC =	00_launcher.c \
-			0_intmax.c \
-			0_intmin.c \
-			0_empty.c \
-			0_normal.c \
-			0_space.c
+			01_intmax.c \
+			03_intmin.c \
+			02_empty.c \
+			04_normal.c \
+			05_space.c
 
 ATOI_FILES =	$(addprefix $(ATOI_DIR), $(ATOI_SRC))
 ATOI_NAME =	$(ATOI_DIR)atoi_test.exe
 
 STRJOIN_DIR = 	str_join_test/
 STRJOIN_SRC = 	00_launcher.c \
-				0_normal.c \
-				0_NULL.c \
-				0_strempty.c \
-				0_emptystr.c
+				01_normal.c \
+				02_NULL.c \
+				03_strempty.c \
+				04_emptystr.c
+
 STRJOIN_FILES = 	$(addprefix $(STRJOIN_DIR), $(STRJOIN_SRC))
 STRJOIN_NAME = $(STRJOIN_DIR)str_join_test.exe
 
 STRLEN_DIR = 	strlen_test/
 STRLEN_SRC = 	00_launcher.c \
-				0_str.c \
-				0_empty.c \
-				0_NULL.c \
-				0_charspe.c
+				04_str.c \
+				01_empty.c \
+				02_NULL.c \
+				03_charspe.c
 
 STRLEN_FILES = 	$(addprefix $(STRLEN_DIR), $(STRLEN_SRC))
 STRLEN_NAME = $(STRLEN_DIR)strlen_test.exe
@@ -32,14 +33,16 @@ STRLEN_NAME = $(STRLEN_DIR)strlen_test.exe
 
 ISALPHA_DIR = 	isalpha_test/
 ISALPHA_SRC = 	00_launcher.c \
-				0_charmin.c \
-				0_charmaj.c \
-				0_space.c \
-				0_nbr.c \
-				0_charspe.c
+				01_charmin.c \
+				02_charmaj.c \
+				03_space.c \
+				04_nbr.c \
+				05_charspe.c
 
 ISALPHA_FILES = 	$(addprefix $(ISALPHA_DIR), $(ISALPHA_SRC))
 ISALPHA_NAME = $(ISALPHA_DIR)ISALPHA_test.exe
+
+
 
 MAIN = main.c
 NAME = test.a
