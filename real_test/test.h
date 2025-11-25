@@ -6,11 +6,7 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:22:01 by jtardieu          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/11/24 21:57:41 by vsyutkin         ###   ########.fr       */
-=======
-/*   Updated: 2025/11/24 21:59:55 by vsyutkin         ###   ########.fr       */
->>>>>>> 205e608e64f3b31eaa4f86c84d52591c5903b7f0
+/*   Updated: 2025/11/25 13:32:21 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +22,6 @@ int	teststrlen2(void);
 int	teststrlen3(void);
 int	teststrlen4(void);
 
-<<<<<<< HEAD
-=======
 int	test_atoi1(void);
 int	test_atoi2(void);
 int	test_atoi3(void);
@@ -38,7 +32,6 @@ int	test_atoi1();
 int	test_atoi2();
 int	test_atoi3();
 int	test_atoi4();
->>>>>>> 205e608e64f3b31eaa4f86c84d52591c5903b7f0
 int	test_atoi5();
 
 int test_putstr1();

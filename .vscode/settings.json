@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"test.h": "c",
+		"terminal_colors.h": "c",
+		"libft.h": "c",
+		"libunit.h": "c"
+	}
+}
