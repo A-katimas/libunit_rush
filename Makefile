@@ -6,7 +6,7 @@
 #    By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 16:03:36 by vsyutkin          #+#    #+#              #
-#    Updated: 2025/11/26 11:25:13 by vsyutkin         ###   ########.fr        #
+#    Updated: 2025/11/26 11:43:51 by vsyutkin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 # ############################################################################ #
 
 LIBFT_DIR = ./resource/
-LIBUNIT_DIR = ./1_LIBUNIT/
+LIBUNIT_DIR = ./framework/
 TEST_DIR = ./real_test/
 PROOF_DIR = ./tests/
 

@@ -6,7 +6,7 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:22:01 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/26 09:53:31 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/26 11:43:51 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define TEST_H
 
 # include "../resource/libft.h"
-# include "../1_LIBUNIT/libunit.h"
+# include "../framework/libunit.h"
 
 int	teststrlen1(void);
 int	teststrlen2(void);

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   cleanup_test_list.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:18:59 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/26 11:43:51 by vsyutkin         ###   ########.fr       */
+/*   Created: 2025/11/24 18:00:35 by vsyutkin          #+#    #+#             */
+/*   Updated: 2025/11/24 21:02:23 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include "libunit.h"
 
-# include "../framework/libunit.h"
-
-int	ko_launcher(void);
-int	ok_launcher(void);
-int	segfault_launcher(void);
-int	bus_error_launcher(void);
-
-#endif
+/*
+	Cleans up the test list by freeing all allocated memory.
+*/
+void	cleanup_test_list(t_unit_test **test_list)
+{
+	mhandler_free_all(&(*test_list)->allocs);
+}
