@@ -6,7 +6,7 @@
 #    By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 16:03:36 by vsyutkin          #+#    #+#              #
-#    Updated: 2025/11/26 09:47:03 by vsyutkin         ###   ########.fr        #
+#    Updated: 2025/11/26 11:25:13 by vsyutkin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@
 LIBFT_DIR = ./resource/
 LIBUNIT_DIR = ./1_LIBUNIT/
 TEST_DIR = ./real_test/
+PROOF_DIR = ./tests/
 
 # ############################################################################ #
 #						# PROJECT SOURCES DECLARATIONS #					   #
@@ -80,6 +81,7 @@ $(AR):
 clean: clear
 	$(ARMAKE) clean
 	make -C $(TEST_DIR) clean
+	make -C $(PROOF_DIR) clean
 	rm -rf $(OBJS)
 
 fclean: clear clean
@@ -87,12 +89,17 @@ fclean: clear clean
 	$(RM) a.out
 	$(ARMAKE) fclean
 	make -C $(TEST_DIR) fclean
+	make -C $(PROOF_DIR) fclean
 
 re: clear fclean all
 
 test: 
 	make -C $(TEST_DIR)
 	$(TEST_DIR)test.exe
+
+tests:
+	make -C $(PROOF_DIR) all
+	$(PROOF_DIR)tests.exe
 
 # ############################################################################ #
 #						# PROJECT BONUS #									   #
@@ -249,7 +256,7 @@ git_gitpush:
 
 .PHONY: all clean fclean re bonus clear help git git_cursus git_push git_fpush \
 git_status git_add git_commit git_gitpush norminette git_norminette git_auto \
-git_msg1 git_msg2
+git_msg1 git_msg2 test tests
 
 # .PHONY is used to declare phony targets. When a target is phony, it will
 # run the target rather do something to a file.

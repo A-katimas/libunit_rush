@@ -6,7 +6,7 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:50:03 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/26 09:49:03 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/26 11:33:52 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 enum e_test_status
 {
 	TEST_SUCCESS = 0,
-	TEST_FAILURE = -1,
+	TEST_FAILURE = 255,
 	TEST_SIGSEGV = SIGNAL_EXIT_OFFSET + SIGSEGV,
 	TEST_SIGBUS = SIGNAL_EXIT_OFFSET + SIGBUS,
 	TEST_SIGABRT = SIGNAL_EXIT_OFFSET + SIGABRT,

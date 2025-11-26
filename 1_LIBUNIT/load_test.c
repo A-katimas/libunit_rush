@@ -6,7 +6,7 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:01:49 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/25 14:45:32 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/26 10:58:44 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	load_test(t_unit_test **test_list, char *name,\
 		new_test->test_func = test_func;
 		new_test->signal = 0;
 		new_test->expected = expected;
-		new_test->allocs = (*test_list)->allocs;
 		new_test->next = NULL;
 		temp->next = new_test;
 	}

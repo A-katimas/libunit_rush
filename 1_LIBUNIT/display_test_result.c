@@ -6,7 +6,7 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:44:03 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/26 09:02:54 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/26 11:35:16 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	signal_print(int signal)
 		ft_putstr_fd_colored("SIGILL", 1, TERMINAL_UNDER_BLUE);
 	else if (signal == TEST_SIGPIPE)
 		ft_putstr_fd_colored("SIGPIPE", 1, TERMINAL_UNDER_GREEN);
-	else if (signal == 0)
+	else if (signal == TEST_SUCCESS)
 		ft_putstr_fd_colored("SUCCESS", 1, TERMINAL_UNDER_GREEN);
-	else if (signal == -1)
+	else if (signal == TEST_FAILURE)
 		ft_putstr_fd_colored("FAILURE", 1, TERMINAL_UNDER_RED);
 	else
 		ft_putstr_fd_colored("Unknown signal", 1, TERMINAL_UNDER_WHITE);
@@ -71,7 +71,7 @@ int	display_test_result(t_unit_test **test_list)
 	temp = *test_list;
 	total_tests = 0;
 	passed_tests = 0;
-	while (temp->next)
+	while (temp)
 	{
 		total_tests++;
 		if (temp->signal == 0)
