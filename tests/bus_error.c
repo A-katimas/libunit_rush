@@ -6,27 +6,16 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 10:04:34 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/26 11:56:53 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/26 12:13:53 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
-
-#include <stdint.h>
 #include <stdlib.h>
 
-static
 int	buserror_test(void)
 {
-	char			*p;
-	volatile int	*misaligned;
-
-	p = malloc(sizeof(int) + 1);
-	if (p)
-	{
-		misaligned = (volatile int *)(p + 1);
-		*misaligned = 42;
-	}
+	raise(SIGBUS);
 	return (0);
 }
 

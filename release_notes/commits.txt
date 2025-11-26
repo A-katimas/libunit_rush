@@ -17,3 +17,6 @@ approaching end
 v6
 some fixes
 
+v7
+fix: raise sigbus
+
