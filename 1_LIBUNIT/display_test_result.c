@@ -6,7 +6,7 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 17:44:03 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/25 14:22:35 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:02:54 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ void	signal_report(int signal, int expected)
 
 /*
 	Displays the results of the executed tests.
+	@return 0 if all tests passed, or -1 otherwise.
 */
-void	display_test_result(t_unit_test **test_list)
+int	display_test_result(t_unit_test **test_list)
 {
 	t_unit_test	*temp;
 	int			total_tests;
@@ -80,4 +81,8 @@ void	display_test_result(t_unit_test **test_list)
 		temp = temp->next;
 	}
 	ft_printf("Passed %d out of %d tests.\n", passed_tests, total_tests);
+	if (passed_tests != total_tests)
+		return (-1);
+	else
+		return (0);
 }

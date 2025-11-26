@@ -45,7 +45,7 @@ ISALPHA_NAME = $(ISALPHA_DIR)ISALPHA_test.exe
 
 
 MAIN = main.c
-NAME = test.a
+NAME = test.exe
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g3
 
@@ -57,27 +57,15 @@ LIBUNIT_DIR = ../
 
 SOURCE = 	$(STRLEN_FILES) \
 			$(ATOI_FILES) \
-			putstr_test/00_str.c \
-			putstr_test/01_charspe.c \
-			putstr_test/02_strspe.c \
-			putstr_test/03_empty.c \
-			str_join_test/00_normal.c \
-			str_join_test/01_NULL.c \
-			str_join_test/02_strempty.c \
-			str_join_test/03_emptystr.c \
-			isalpha_test/00_char.c
-
-
-
-
+			$(ISALPHA_FILES) \
+			$(STRJOIN_FILES)
 
 OBJ = $(SOURCE:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJ)
-	cp -rf $(LIBFT) $(NAME)
-	ar -rcs $@ $(OBJ)
+$(NAME): $(LIBFT) $(LIBUNIT) $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(SOURCE) $(MAIN) $(LIBUNIT) $(LIBFT)
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
@@ -87,26 +75,22 @@ $(LIBUNIT):
 
 clean:
 	rm -rf $(OBJ)
-	make -C $(LIBFT_DIR) clean
-	make -C $(LIBUNIT_DIR) clean
 
 fclean: clean
 	rm -rf $(NAME)
-	make -C $(LIBFT_DIR) fclean
-	make -C $(LIBUNIT_DIR) fclean
 
 re: fclean all
 
-atoi: $(ATOI_FILES) $(LIBFT) $(LIBUNIT)
-	$(CC) $(CFLAGS) -o $(ATOI_NAME) $(ATOI_FILES) $(MAIN) $(LIBUNIT) $(LIBFT)
-	${ATOI_NAME}
+# atoi: $(ATOI_FILES) $(LIBFT) $(LIBUNIT)
+# 	$(CC) $(CFLAGS) -o $(ATOI_NAME) $(ATOI_FILES) $(MAIN) $(LIBUNIT) $(LIBFT)
 
-str_join: $(STRJOIN_FILES) $(LIBFT) $(LIBUNIT)
-	$(CC) $(CFLAGS) -o $(STRJOIN_NAME) $(STRJOIN_FILES) $(MAIN) $(LIBUNIT) $(LIBFT)
-	${STRJOIN_NAME}
+# isalpha: $(ISALPHA_FILES) $(LIBFT) $(LIBUNIT)
+# 	$(CC) $(CFLAGS) -o $(ISALPHA_NAME) $(ISALPHA_FILES) $(MAIN) $(LIBUNIT) $(LIBFT)
 
-strlen: $(STRLEN_FILES) $(LIBFT) $(LIBUNIT)
-	$(CC) $(CFLAGS) -o $(STRLEN_NAME) $(STRLEN_FILES) $(MAIN) $(LIBUNIT) $(LIBFT)
-	${STRLEN_NAME}
+# str_join: $(STRJOIN_FILES) $(LIBFT) $(LIBUNIT)
+# 	$(CC) $(CFLAGS) -o $(STRJOIN_NAME) $(STRJOIN_FILES) $(MAIN) $(LIBUNIT) $(LIBFT)
+
+# strlen: $(STRLEN_FILES) $(LIBFT) $(LIBUNIT)
+# 	$(CC) $(CFLAGS) -o $(STRLEN_NAME) $(STRLEN_FILES) $(MAIN) $(LIBUNIT) $(LIBFT)
 
 .PHONY : all clean fclean re strlen

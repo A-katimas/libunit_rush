@@ -8,3 +8,6 @@ chore: terminal_colors moved to LIBFT repository
 v3
 feature: name of the program in Makefile
 
+v4
+yes
+

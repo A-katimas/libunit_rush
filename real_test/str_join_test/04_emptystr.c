@@ -3,24 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   04_emptystr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 21:23:43 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/25 17:53:49 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:58:06 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../test.h"
 
-int test_strjoin4()
+int	test_strjoin4(void)
 {
-	int		value;
 	char	*chien;
 	char	*chat;
 	char	*chienchatla;
 	char	*rep;
 
-	value = 0;
 	chien = "";
 	chat = "la";
 	rep = "la";

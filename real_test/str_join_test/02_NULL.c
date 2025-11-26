@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   02_NULL.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 21:23:36 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/25 17:54:23 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:57:14 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 int	test_strjoin2(void)
 {
-	int		value;
 	char	*chien;
 	char	*chat;
 	char	*chienchatla;
 	char	*rep;
 
 	rep = "wouf";
-	value = 0;
 	chien = "wouf";
+	chat = NULL;
 	chienchatla = ft_strjoin(chien, chat);
 	if (chienchatla == rep)
 		return (0);

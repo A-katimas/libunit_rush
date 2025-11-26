@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   03_empty.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 20:54:40 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/25 17:47:35 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:59:47 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	test_putstr4(void)
 
 	value = 0;
 	chien = "";
-	value = ft_putstr_fd(chien,1);
+	value = ft_putstr_fd(chien, 1);
 	if (value == 4)
 		return (0);
 	else

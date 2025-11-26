@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mhandler_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsyutkin <vsyutkin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 17:05:44 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/01/23 18:42:21 by aalferov         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:56:57 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,35 +59,6 @@ void	mhandler_free_all(t_allocs **allocs)
 	}
 }
 
-void	mhandler_free_all_rev(t_allocs **allocs)
-{
-	t_allocs	*current;
-	t_allocs	*prev;
-
-	if (!allocs || !*allocs)
-		return ;
-	current = *allocs;
-	while (current->next)
-		current = current->next;
-	while (current)
-	{
-		prev = *allocs;
-		if (current->is_2d)
-			free(current->content_2d);
-		else
-			free(current->content);
-		current->content = NULL;
-		free(current);
-		while (prev && prev->next != current)
-			prev = prev->next;
-		current = prev;
-	}
-	*allocs = NULL;
-}
-
-/*
-  Free one element ID in the list of allocated elements.
-*/
 void	mhandler_free_by_func_ptr(void *func_ptr, t_allocs **allocs)
 {
 	t_allocs	*temp;
@@ -102,14 +73,13 @@ void	mhandler_free_by_func_ptr(void *func_ptr, t_allocs **allocs)
 		prev = temp;
 		temp = temp->next;
 	}
-	if (!prev)
+	if (temp && !prev)
 	{
-		temp = temp->next;
+		*allocs = temp->next;
 		mhandler_free_1d_or_2d(temp);
 		free(temp);
-		*allocs = temp;
 	}
-	else
+	else if (temp)
 	{
 		prev->next = temp->next;
 		mhandler_free_1d_or_2d(temp);

@@ -6,7 +6,7 @@
 /*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:50:03 by vsyutkin          #+#    #+#             */
-/*   Updated: 2025/11/25 14:06:09 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:49:03 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ enum e_test_status
 	TEST_SIGPIPE = SIGNAL_EXIT_OFFSET + SIGPIPE
 };
 
-
 typedef struct t_unit_test
 {
 	char				*name;
@@ -47,7 +46,7 @@ void	load_test(t_unit_test **test_list,\
 							char *name,	int (*test_func)(void), int expected);
 
 void	launch_tests(t_unit_test **test_list);
-void	display_test_result(t_unit_test **test_list);
+int		display_test_result(t_unit_test **test_list);
 void	cleanup_test_list(t_unit_test **test_list);
 
 #endif

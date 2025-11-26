@@ -1,1 +1,1 @@
-feature: name of the program in Makefile
+yes

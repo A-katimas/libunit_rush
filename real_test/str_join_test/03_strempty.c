@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   03_strempty.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 21:23:40 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/25 17:54:14 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/11/26 09:55:38 by vsyutkin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 int	test_strjoin3(void)
 {
-	int		value;
 	char	*chien;
 	char	*chat;
 	char	*chienchatla;
 	char	*rep;
 
 	rep = "wouf";
-	value = 0;
 	chien = "wouf";
 	chat = "";
 	chienchatla = ft_strjoin(chien, chat);
