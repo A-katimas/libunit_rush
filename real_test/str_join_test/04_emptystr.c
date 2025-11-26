@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   04_emptystr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 21:23:43 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/26 09:58:06 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/26 13:15:08 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ int	test_strjoin4(void)
 	char	*chat;
 	char	*chienchatla;
 	char	*rep;
+	int		result;
 
 	chien = "";
 	chat = "la";
 	rep = "la";
 	chienchatla = ft_strjoin(chien, chat);
-	if (chienchatla == rep)
+	result = ft_strncmp(chienchatla, rep, ft_strlen(rep));
+	if (!result)
 		return (0);
 	else
 		return (-1);

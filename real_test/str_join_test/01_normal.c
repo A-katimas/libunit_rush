@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   01_normal.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsyutkin <vsyutkin@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 21:23:15 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/26 09:58:21 by vsyutkin         ###   ########.fr       */
+/*   Updated: 2025/11/26 13:14:15 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@ int	test_strjoin1(void)
 	char	*chat;
 	char	*chienchatla;
 	char	*rep;
+	int		result;
 
+	result = 0;
 	rep = "wouflala";
 	chien = "woufla";
 	chat = "la";
 	chienchatla = ft_strjoin(chien, chat);
-	if (chienchatla == rep)
+	result = ft_strncmp(chienchatla, rep, ft_strlen(rep));
+	if (!result)
 		return (0);
 	else
 		return (-1);
