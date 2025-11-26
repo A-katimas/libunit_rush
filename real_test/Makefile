@@ -2,8 +2,8 @@
 ATOI_DIR =	atoi_test/
 ATOI_SRC =	00_launcher.c \
 			01_intmax.c \
-			03_intmin.c \
 			02_empty.c \
+			03_intmin.c \
 			04_normal.c \
 			05_space.c
 
